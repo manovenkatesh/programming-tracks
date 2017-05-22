@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int check(char arr[]){
+    char a[]="a";
+    char an[]="an";
+    char the[]="the";
+    if(!strcmp(arr,a) || !strcmp(arr,an) || !strcmp(arr,the) ){
+        return 1;
+    }
+    else 
+        return 0;
+}
+
+int main()
+{
+    char s[1000],c[100];
+    int i,top=0,j,l,val=0;
+    scanf("%[^\n]s",s);
+    l=strlen(s);
+    for(i=0;i<l;i++){
+        top=0;
+        while(i<l && s[i]!=' '){
+            c[top]=s[i];
+            i++;
+            top++;
+        }
+         
+        c[top]='\0';
+ printf("%s \n",c);
+        if(top<=4){
+            val+=check(c);
+        }
+       
+    }
+    printf("%d",val);
+    return 0;
+}
